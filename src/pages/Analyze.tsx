@@ -6,6 +6,12 @@ interface ApiResponse {
   matched_keywords: string[];
 }
 
+const res = await fetch(`${API_URL}/analyze`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ message }),
+});
+
 export default function Analyze() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
